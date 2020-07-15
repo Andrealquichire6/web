@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
+
 </head>
 
 <body>
@@ -28,7 +29,18 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s6">
+                        <select>
+                            <option value="" disabled selected>Escoge una opcion</option>
+                        	<option value="1">Colombia</option>
+                        	<option value="2">Venezuela</option>
+                        	<option value="3">Ecuador</option>
+                        	<option value="4">Bolivia</option>
+                        	<option value="5">Perú</option>
+                        </select>
+                        <label>Pais</label>
+                    </div>
+                    <div class="input-field col s6">
                         <i class="material-icons prefix">location_city</i>
                         <input id="direccion" type="text" class="validate">
                         <label for="direccion">Direccion</label>
@@ -41,7 +53,7 @@
                         <label for="usuario">Usuario</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="password" type="text" class="validate">
+                        <input id="password" type="password" class="validate">
                         <label for="password">Password</label>
                     </div>
                 </div>
@@ -64,8 +76,13 @@
         </div>
     </div>
 
-
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script>
+		$(document).ready(function() {
+		    $('select').formSelect();
+		});	      
+	</script>
 
 </body>
 
