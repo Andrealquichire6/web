@@ -7,7 +7,8 @@ $('#submit_form').on('submit', function(e) {
     var direccion = $('input[name="direccion"]').val();
     var usuario = $('input[name="usuario"]').val();
     var password = $('input[name="password"]').val();
-    /*
+    var email = $('input[name="email"]').val();
+
     if (nombres == '' || nombres.length > 25) {
     	alert("Por favor ingresa tús nombres y verifica que no sea mayor de 25 caracteres.");
     }
@@ -26,7 +27,6 @@ $('#submit_form').on('submit', function(e) {
     } else if (!/^[a-zA-Z]*$/g.test(usuario)) {
     	alert("Parece que tienes caracteres invalidos.")
     }
-	*/
 
     if (password == '' || password.length > 20 || password.length < 15) {
     	alert("Por favor verifica que el password ingresado tenga de 15 a 20 caracteres.");
@@ -34,5 +34,21 @@ $('#submit_form').on('submit', function(e) {
     	alert("Tu clave deberia ser más segura");
     }
 
+    if (email == '' || email.length > 120) {
+        alert("Tu correo no puede estar vacio, o terner más de 120 caracteres.");
+    }
 
+    $('#submit_form input').on('change', function() {
+       alert($('input[name=radioName]:checked', '#myForm').val()); 
+    });
+
+
+});
+
+$('#submit_form input[name="gustos"]').on('change', function() {
+    if ($('input[name="gustos"]:checked').val() == '1') {
+        $( "#secciongustos" ).show();
+    } else {
+        $( "#secciongustos" ).hide();
+    }
 });
